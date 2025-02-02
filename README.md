@@ -8,5 +8,6 @@ A single layer neural network that is purely created using numpy which can be us
 * Training (training): Repeats the forward pass, loss calculation, backpropagation, and parameter update for a specified number of epochs. Prints loss every 100 epochs to track training progress.
 * Prediction: After training, the model can predict the AND output for new input values. This is a simple neural network to model the AND operation using gradient descent.
 # Video Demonstration
-https://github.com/user-attachments/assets/044acf60-53fe-4a4b-8c0b-0784092896ed
+https://github.com/user-attachments/assets/46ae036d-f2b5-4ce9-a8c8-e64066129502
+
 

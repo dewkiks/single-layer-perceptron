@@ -1,6 +1,6 @@
 import numpy as np
 
-class and_neural_model:
+class Single_perceptron:
 
     def __init__(self, input_size, learning_rate=0.0005):
         self.weight=np.random.rand(input_size)
@@ -56,34 +56,34 @@ class and_neural_model:
 def sigmoid(x):
     return 1/(1+ np.exp(-x))
 
-#and dataset
+#and and or dataset
 X = np.array([[0,0],[0,1],[1,0],[1,1]])
 Y_realdata = np.array([0,1,1,1])
-
-model = and_neural_model(2,0.1)
-model.forward_pass(X)
-loss = model.back_propogation(X,Y_realdata)
-model.training(X,Y_realdata)
-print("trained weight: ",model.weight)
-print("trained bias",model.bias)
-
-# newdata = np.array([[0,0],[0,0],[1,0],[1,1]]
+and_realdata=np.array([0,0,0,1])
+andmodel= Single_perceptron(2)
+ormodel = Single_perceptron(2)
+ormodel.training(X,Y_realdata)
+andmodel.training(X,and_realdata)
+print("trained weight: ",ormodel.weight)
+print("trained bias",ormodel.bias)
 
 while True:
     try:
-        q= input("enter the first input of and: ")
+        q= input("enter the first value : ")
         if q not in ['0','1']:
             print("invalid input")
             continue
 
-
-        r= input("enter the second value of and: ")
+        r= input("enter the second value of : ")
         if r not in ['0','1']:
             print("invalid input")
             continue
+        
         newdata = np.array([int(q),int(r)])
-        predictions = model.forward_pass(newdata)
+        predictions = ormodel.forward_pass(newdata)
         result=np.round(predictions)
-        print("the output of xor is: ",result)
+        andpredictions= andmodel.forward_pass(newdata)
+        print("the output of and is: ",np.round(andpredictions))
+        print("the output of or is: ",result)
     except ValueError: 
         print("error")
